@@ -1,0 +1,8 @@
+*.mex*
+*.o
+*.a
+.depends
+./extern/trains/frontend
+./extern/trains/xxxxx.tmp
+**/#*#
+**/.#*
