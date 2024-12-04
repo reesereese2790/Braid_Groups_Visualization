@@ -3,13 +3,6 @@ clc
 addpath('C:\Users\arm20dh\OneDrive\Documents\GitHub\Braid_Groups_Visualization\braidlab-master');
 warning('off','BRAIDLAB:braid:entropy:noconv'); 
 
-% GRAPHS TO REPLICATE
-% create FTBE vs. sigma 
-% create topological entropy vs. sigma
-% create number of generators vs. sigma
-% create number of generators vs. number of strands
-% create number of generators vs. time 
-
 % initialize variables for braid diagram
 N = 10;
 x0= [0:1/(N-1):1;zeros(1,N)]; 
@@ -44,41 +37,13 @@ end
 % permute the dimensions to be compatible with a braid
 trajectories = permute(trajectories,[3,2,1]);
 
-% create databraid
-warning ('off ','BRAIDLAB : braid : colorbraiding : notclosed ')
-b = braidlab.databraid(trajectories);
-E = ftbe(b);
-
-
-
-% % initialize variables for ftbe vs. sigma graph
-% sigma_slider = 1:1:100;
-% ftbe_array = zeros(1,length(sigma_slider));
-
-
-
-% plot
-% figure 
-% xlabel('Volatility')
-% ylabel('Finite Time Braiding Exponent')
-% title('FTBE vs. Volatility')
-% average over several iterations
-
-
-
-
-
-% OLD CODE
-% 
-% % iterations of generating different random entropies 
-% M=20; 
-%
-% % iterating number of strands
-% N_initial=2; 
-% N_final=20; 
-% N_increment=1; 
-% N_slider=N_initial:N_increment:N_final; 
-% 
-% % initialize entropy values and averages
-% e_array=zeros(M,length(N_slider)); 
-% average_line=zeros(1,length(N_slider)); 
+% plot the generated random Brownian motion trajectories
+figure;
+hold on;
+for i = 1:N
+    plot(t, squeeze(trajectories(:, 1, i)));
+end
+xlabel('Time');
+ylabel('Position');
+title('Brownian Motion Trajectories');
+hold off;
