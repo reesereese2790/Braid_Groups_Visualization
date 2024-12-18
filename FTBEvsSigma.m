@@ -4,7 +4,7 @@ addpath('C:\Users\arm20dh\OneDrive\Documents\GitHub\Braid_Groups_Visualization\b
 warning('off','BRAIDLAB:braid:entropy:noconv'); 
 
 % initialize variables for ftbe vs. sigma graph
-M = 100;
+M = 1000;
 sigma_slider = 1:1:10;
 ftbe_array = zeros(M,length(sigma_slider));
 
@@ -53,7 +53,9 @@ for v = 1:M
 end
 
 figure
-plot(sigma_slider,mean(ftbe_array,1))
+plot(sigma_slider,mean(ftbe_array,1),'r')
+hold on;
+plot(sigma_slider,ftbe_array,'o', 'MarkerSize', 1)
 xlabel('Volatility')
 ylabel('Finite Time Braiding Exponent')
 title('FTBE vs. Volatility')
