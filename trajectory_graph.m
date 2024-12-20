@@ -4,7 +4,7 @@ addpath('C:\Users\arm20dh\OneDrive\Documents\GitHub\Braid_Groups_Visualization\b
 warning('off','BRAIDLAB:braid:entropy:noconv'); 
 
 % initialize variables for braid diagram
-N = 10;
+N = 1000;
 x0= [0:1/(N-1):1;zeros(1,N)]; 
 mu=zeros(2,1); 
 sigma = 3;
@@ -44,6 +44,6 @@ for i = 1:N
     plot(t, squeeze(trajectories(:, 1, i)));
 end
 xlabel('Time');
-ylabel('Position');
+ylabel('Distance');
 title('Brownian Motion Trajectories');
 hold off;
