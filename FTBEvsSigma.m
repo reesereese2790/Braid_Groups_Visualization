@@ -1,5 +1,6 @@
 clear 
 clc 
+% make sure to download braidlab and then change your path name accordingly
 addpath('C:\Users\arm20dh\OneDrive\Documents\GitHub\Braid_Groups_Visualization\braidlab-master');
 warning('off','BRAIDLAB:braid:entropy:noconv'); 
 
@@ -75,7 +76,7 @@ legend('N=10','N=20','N=30');
 xlabel('Volatility of Trajectory')
 ylabel('Finite Time Braiding Exponent')
 title('FTBE vs. Volatility')
-
+ 
 figure
 plot(sigma_slider,mean(b,1),'r','LineWidth', 2)
 hold on;
@@ -99,6 +100,3 @@ legend('N=10','N=20','N=30');
 xlabel('Volatility of Trajectory')
 ylabel('Braid Length')
 title('Braid Length vs. Volatility')
-
-% to show all points and not only average
-% plot(sigma_slider,vary_strands(10,10),'o', 'MarkerSize', 1)
